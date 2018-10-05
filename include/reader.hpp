@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include<string>
 using namespace std;
 
-ifstream inFile;
+int readdoc(fstream *,string);
