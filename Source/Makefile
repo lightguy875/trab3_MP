@@ -4,6 +4,7 @@ CC= g++
 CFLAGS=-I$(IDIR) -ftest-coverage -fprofile-arcs -lgtest -lgtest_main -fpermissive
 
 ODIR=../obj
+TEST_ODIR=../Test/obj
 LDIR =../Source
 DIR_TESTS=../Test
 
@@ -31,7 +32,7 @@ $(PROGRAM): $(OBJECTS)
 $(TEST_EXE) : $(TESTS) reader.cpp
 	$(CC) -o $@ --coverage $^ $(CFLAGS)
 
-program: $(PROGRAM) #test gcov project
+program: $(PROGRAM) test gcov project
 
 test: $(TEST_EXE)
 	mv $(LDIR)/*.gcno $(ODIR)
@@ -40,8 +41,7 @@ run:
 	./$(PROGRAM) 
 
 run_test:
-	/Test./$()
-
+	./$(TEST_EXE)
 .PHONY: clean
 
 gcov:

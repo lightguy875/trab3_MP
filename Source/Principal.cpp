@@ -1,3 +1,4 @@
+
 #include "../include/reader.hpp"
 
 
@@ -10,6 +11,7 @@ int main(int argc, char const *argv[])
     if(inFile.is_open())
     {
         cout << "It is working";
+        
     }
     
     else
