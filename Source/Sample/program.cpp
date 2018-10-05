@@ -16,4 +16,3 @@ int main(int argc, char const *argv[])
     it will treat the next line as a commented line
     return 0;
 }
-

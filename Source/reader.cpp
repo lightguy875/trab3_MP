@@ -21,7 +21,26 @@ int readdoc(fstream * inFile,string stringfile)
 }
 int count_doc_lines(fstream * inFile,int& line)
 {
-    
+    line = 0;
+    string a;
+   if(inFile->is_open())
+   {
+       while(!inFile->eof())
+       {
+           getline(*inFile, a);
+           line++;
+           
+       }
+       
+       return 0;
+   }
+   
+   else
+   {
+       return -1;
+   }
+   
+
 }
 int find_next_comment(fstream * inFile,int& line)
 {

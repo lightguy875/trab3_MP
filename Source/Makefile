@@ -48,10 +48,10 @@ gcov:
 	gcov $(TEST_DIR)/$(PROGRAM).gcda
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ $(PROGRAM) $(TEST_EXE)
 
 clean_coverage:
 	rm -f $(ODIR)/*.gcno $(ODIR)/*.gcda
 
 clean_all:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ && rm -f $(ODIR)/*.gcno $(ODIR)/*.gcda
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ && rm -f $(ODIR)/*.gcno $(ODIR)/*.gcda $(PROGRAM) $(TEST_EXE)
