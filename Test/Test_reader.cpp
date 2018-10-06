@@ -13,7 +13,7 @@
 TEST(GET_ALL_DOC_LINES,all_lines_count)
 {
     fstream inFile;
-    int line;
+    int line = 0;
     string a = "Sample/program.cpp";
     EXPECT_EQ(0, readdoc(&inFile, a));
     EXPECT_EQ(1, inFile.is_open());
@@ -21,15 +21,14 @@ TEST(GET_ALL_DOC_LINES,all_lines_count)
     EXPECT_NE(0,line);
 }
 
-/* TEST(find_comment_in_a_file,commenttary)
+ TEST(find_comment_in_a_file,commenttary)
 {
     int line;
     fstream inFile;
     string a = "Sample/program.cpp";
-    readdoc(&inFile,a);
-    EXPECT_EQ(-1, find_next_comment(&inFile, line));
+    EXPECT_EQ(-1, count_coment(&inFile, line));
 }
- */
+ 
 
 
 int main(int argc, char const *argv[])
