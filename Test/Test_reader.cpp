@@ -23,15 +23,19 @@ TEST(GET_ALL_DOC_LINES,all_lines_count)
 
  TEST(find_comment_in_a_file,commenttary)
 {
-    int line;
+    int line = 0;
     fstream inFile;
     string a = "Sample/program.cpp";
-    EXPECT_EQ(-1, count_coment(&inFile, line));
+    EXPECT_EQ(-1,count_coment(&inFile, line));
+    readdoc(&inFile,a);
+    EXPECT_NE(-1,count_coment(&inFile,line));
+    cout << line << endl;
+
 }
  
 
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
    ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

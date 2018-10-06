@@ -56,7 +56,7 @@ int count_coment(fstream *inFile, int &line)
 					l = a.find("\\");
 					if (l != -1)
 					{
-						while (l != -1 && !inFile->eof())
+						while (l != -1 )
 						{
 							line++;
 							getline(*inFile, a);
@@ -67,13 +67,14 @@ int count_coment(fstream *inFile, int &line)
 				else if (c > b)
 				{
 					line++;
-					l = a.find("*\\");
+					l = a.find("*/");
 					if (l == -1)
 					{
-						while (l == -1 && !inFile->eof())
+						while (l == -1)
 						{
 							line++;
 							getline(*inFile, a);
+                            l = a.find("*/");
 						}
 					}
 				}
@@ -81,40 +82,41 @@ int count_coment(fstream *inFile, int &line)
 			else if (b != -1 && c == -1)
 			{
 				line++;
-				l = a.find("*\\");
+				l = a.find("*/");
 				if (l == -1)
 				{
-					while (l == -1 && !inFile->eof())
+					while (l == -1)
 					{
 						line++;
 						getline(*inFile, a);
+                        l = a.find("*/");
 					}
 				}
 			}
 
 			else if (b == -1 && c != -1)
 			{
-				if (c < b)
-				{
+				
 					line++;
 					l = a.find("\\");
 					if (l != -1)
 					{
-						while (l != -1 && !inFile->eof())
+						while (l != -1 )
 						{
 							line++;
 							getline(*inFile, a);
 							l = a.find("\\");
 						}
 					}
-				}
+				
 				else if (a == "\n")
 				{
 					line++;
 				}
 			}
 		}
-        return l;
+        
+        return 0;
 	}
     else
     {
