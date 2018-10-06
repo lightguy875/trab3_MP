@@ -6,6 +6,6 @@
 #include<string>
 using namespace std;
 int readdoc(fstream *,string);
-int find_next_comment(fstream *,int&);
+int count_coment(fstream *inFile, int &line);
 int count_doc_lines(fstream *inFile, int &line);
 #endif
