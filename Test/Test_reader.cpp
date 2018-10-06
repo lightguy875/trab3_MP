@@ -10,7 +10,10 @@
  */
 #include "../include/reader.hpp"
 #include <gtest/gtest.h>
-
+/**
+ * @brief Teste da função readdoc
+ * 
+ */
     TEST(Reading_file_successfully, reading)
 {
     fstream inFile;
@@ -18,7 +21,10 @@
     EXPECT_EQ( 0 ,readdoc(&inFile,a));
     EXPECT_EQ(1,inFile.is_open());
 } 
-
+/**
+ * @brief Teste da função de leitura de todas as linhas
+ * 
+ */
 TEST(GET_ALL_DOC_LINES,all_lines_count)
 {
     fstream inFile;
@@ -30,7 +36,10 @@ TEST(GET_ALL_DOC_LINES,all_lines_count)
     EXPECT_NE(-1,count_doc_lines(&inFile,line));
     EXPECT_NE(0,line);
 }
-
+/**
+ * @brief Teste da função de leitura de comentários e linhas em branco
+ * 
+ */
  TEST(find_comment_in_a_file,commenttary)
 {
     int line = 0;

@@ -1,0 +1,85 @@
+\hypertarget{_principal_8cpp}{}\section{Referência do Arquivo Source/\+Principal.cpp}
+\label{_principal_8cpp}\index{Source/\+Principal.\+cpp@{Source/\+Principal.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/reader.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_principal_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}{main}} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Função principal do programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+\begin{DoxyAuthor}{Autor}
+Luís Eduardo (\href{mailto:lightguy875@github.com}{\tt lightguy875@github.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versão}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2018-\/10-\/06
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2018 
+\end{DoxyCopyright}
+
+
+\subsection{Funções}
+\mbox{\Hypertarget{_principal_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}\label{_principal_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}} 
+\index{Principal.\+cpp@{Principal.\+cpp}!main@{main}}
+\index{main@{main}!Principal.\+cpp@{Principal.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char const $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Função principal do programa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em argc} & \\
+\hline
+{\em argv} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 
+\end{DoxyReturn}
+
+
+Definição na linha 21 do arquivo Principal.\+cpp.
+
+
+\begin{DoxyCode}
+22 \{
+23     \textcolor{keywordtype}{int} inutializedLines = 0;
+24 
+25     \textcolor{keywordtype}{int} alldocLines = 0;
+26 
+27     \textcolor{keywordtype}{int} utilizedLines = 0;
+28 
+29     fstream inFile;
+30     \textcolor{comment}{// Definição do arquivo a ser lido}
+31     \textcolor{keywordtype}{string} readFile = \textcolor{stringliteral}{"Sample/program.cpp"};
+32     \textcolor{comment}{// Leitura do arquivo}
+33     \mbox{\hyperlink{reader_8hpp_a30d7aac7e42407b143b69884a9ebd84e}{readdoc}}(&inFile, readFile);
+34 
+35     \mbox{\hyperlink{reader_8hpp_af755d33e8dda19017549ff7e9ff9e234}{count\_doc\_lines}}(&inFile, alldocLines);
+36     \textcolor{comment}{// Retorno para a primeira linha do arquivo principal}
+37     inFile.clear();
+38 
+39     inFile.seekg(0, ios::beg);
+40     \textcolor{comment}{// Contagem de linhas comentadas ou em branco}
+41     \mbox{\hyperlink{reader_8hpp_a09d2f37aca5ab1c62628ea86e6c06f6a}{count\_coment}}(&inFile, inutializedLines);
+42 
+43     utilizedLines = alldocLines - inutializedLines;
+44     \textcolor{comment}{// Expoxição de dados coletados}
+45     cout << \textcolor{stringliteral}{"A quantidade de linhas totais do programa são:"} << alldocLines << endl;
+46 
+47     cout << \textcolor{stringliteral}{"A quantidade de linhas de código efetivo são:"} << utilizedLines << endl;
+48 
+49     cout << \textcolor{stringliteral}{"A quantidade de linhas comentadas ou em branco são:"} << inutializedLines << endl;
+50 
+51     \textcolor{keywordflow}{return} 0;
+52 \}
+\end{DoxyCode}

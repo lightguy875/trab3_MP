@@ -1,0 +1,47 @@
+\begin{theindex}
+
+  \item {count\+\_\+coment}
+    \subitem {reader.\+cpp}, \hyperpage{11}
+    \subitem {reader.\+hpp}, \hyperpage{6}
+  \item {count\+\_\+doc\+\_\+lines}
+    \subitem {reader.\+cpp}, \hyperpage{13}
+    \subitem {reader.\+hpp}, \hyperpage{7}
+
+  \indexspace
+
+  \item {include/reader.\+hpp}, \hyperpage{5}
+
+  \indexspace
+
+  \item {main}
+    \subitem {Principal.\+cpp}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Principal.\+cpp}
+    \subitem {main}, \hyperpage{10}
+
+  \indexspace
+
+  \item {readdoc}
+    \subitem {reader.\+cpp}, \hyperpage{14}
+    \subitem {reader.\+hpp}, \hyperpage{8}
+  \item {reader.\+cpp}
+    \subitem {count\+\_\+coment}, \hyperpage{11}
+    \subitem {count\+\_\+doc\+\_\+lines}, \hyperpage{13}
+    \subitem {readdoc}, \hyperpage{14}
+  \item {reader.\+hpp}
+    \subitem {count\+\_\+coment}, \hyperpage{6}
+    \subitem {count\+\_\+doc\+\_\+lines}, \hyperpage{7}
+    \subitem {readdoc}, \hyperpage{8}
+
+  \indexspace
+
+  \item {Source/\+Principal.\+cpp}, \hyperpage{9}
+  \item {Source/reader.\+cpp}, \hyperpage{11}
+
+  \indexspace
+
+  \item {Test/\+Test\+\_\+reader.\+cpp}, \hyperpage{15}
+
+\end{theindex}

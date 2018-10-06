@@ -1,0 +1,24 @@
+\babel@toc {brazil}{}
+\contentsline {chapter}{\numberline {1}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ME}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}\IeC {\'I}ndice dos Arquivos}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Lista de Arquivos}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Arquivos}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Refer\IeC {\^e}ncia do Arquivo include/reader.hpp}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Descri\IeC {\c c}\IeC {\~a}o detalhada}{5}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Fun\IeC {\c c}\IeC {\~o}es}{6}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2.1}count\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}coment()}{6}{subsubsection.3.1.2.1}
+\contentsline {subsubsection}{\numberline {3.1.2.2}count\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}doc\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}lines()}{8}{subsubsection.3.1.2.2}
+\contentsline {subsubsection}{\numberline {3.1.2.3}readdoc()}{8}{subsubsection.3.1.2.3}
+\contentsline {section}{\numberline {3.2}Refer\IeC {\^e}ncia do Arquivo Source/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Principal.cpp}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Descri\IeC {\c c}\IeC {\~a}o detalhada}{10}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Fun\IeC {\c c}\IeC {\~o}es}{10}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}main()}{10}{subsubsection.3.2.2.1}
+\contentsline {section}{\numberline {3.3}Refer\IeC {\^e}ncia do Arquivo Source/reader.cpp}{11}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Descri\IeC {\c c}\IeC {\~a}o detalhada}{11}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Fun\IeC {\c c}\IeC {\~o}es}{11}{subsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.2.1}count\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}coment()}{12}{subsubsection.3.3.2.1}
+\contentsline {subsubsection}{\numberline {3.3.2.2}count\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}doc\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}lines()}{13}{subsubsection.3.3.2.2}
+\contentsline {subsubsection}{\numberline {3.3.2.3}readdoc()}{14}{subsubsection.3.3.2.3}
+\contentsline {section}{\numberline {3.4}Refer\IeC {\^e}ncia do Arquivo Test/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Test\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}reader.cpp}{15}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Descri\IeC {\c c}\IeC {\~a}o detalhada}{15}{subsection.3.4.1}
+\contentsline {chapter}{Sum\IeC {\'a}rio}{17}{section*.6}

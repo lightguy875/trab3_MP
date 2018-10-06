@@ -1,0 +1,255 @@
+\hypertarget{reader_8cpp}{}\section{Referência do Arquivo Source/reader.cpp}
+\label{reader_8cpp}\index{Source/reader.\+cpp@{Source/reader.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/reader.\+hpp\char`\"{}}\newline
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{reader_8cpp_aac6f305904e3ab9183d8bafb83b4f293}{readdoc}} (fstream $\ast$in\+File, string stringfile)
+\begin{DoxyCompactList}\small\item\em Função de leitura do arquivo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{reader_8cpp_af755d33e8dda19017549ff7e9ff9e234}{count\+\_\+doc\+\_\+lines}} (fstream $\ast$in\+File, int \&line)
+\begin{DoxyCompactList}\small\item\em Função que conta todas as linhas do programa. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{reader_8cpp_a09d2f37aca5ab1c62628ea86e6c06f6a}{count\+\_\+coment}} (fstream $\ast$in\+File, int \&line)
+\begin{DoxyCompactList}\small\item\em Função que conta todos os comentários do programa juntamente com quebra de linha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+\begin{DoxyAuthor}{Autor}
+Luís Eduardo (\href{mailto:lightguy875@github.com}{\tt lightguy875@github.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versão}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2018-\/10-\/06
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2018 
+\end{DoxyCopyright}
+
+
+\subsection{Funções}
+\mbox{\Hypertarget{reader_8cpp_a09d2f37aca5ab1c62628ea86e6c06f6a}\label{reader_8cpp_a09d2f37aca5ab1c62628ea86e6c06f6a}} 
+\index{reader.\+cpp@{reader.\+cpp}!count\+\_\+coment@{count\+\_\+coment}}
+\index{count\+\_\+coment@{count\+\_\+coment}!reader.\+cpp@{reader.\+cpp}}
+\subsubsection{\texorpdfstring{count\+\_\+coment()}{count\_coment()}}
+{\footnotesize\ttfamily int count\+\_\+coment (\begin{DoxyParamCaption}\item[{fstream $\ast$}]{in\+File,  }\item[{int \&}]{line }\end{DoxyParamCaption})}
+
+
+
+Função que conta todos os comentários do programa juntamente com quebra de linha. 
+
+Contagem de comentários ou linhas em branco.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em in\+File} & \\
+\hline
+{\em line} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 
+\end{DoxyReturn}
+variáveis necessárias para analisar os comentários do arquivo
+
+Definição na linha 76 do arquivo reader.\+cpp.
+
+
+\begin{DoxyCode}
+77 \{
+82     line = 0;
+83     \textcolor{keywordtype}{int} longComment, shortComment, substringPointer;
+84     \textcolor{keywordtype}{string} lineGetter;
+85     \textcolor{keywordtype}{string} lineGetterAux;
+86 
+87     \textcolor{keywordflow}{if} (inFile->is\_open())
+88     \{
+89         \textcolor{keywordflow}{while} (!inFile->eof())
+90         \{
+91             getline(*inFile, lineGetter);
+92             lineGetterAux = lineGetter;
+93             boost::erase\_all(lineGetterAux, \textcolor{stringliteral}{" "}); \textcolor{comment}{// Remove espaços em branco do programa}
+94             \textcolor{comment}{// procura se existe uma linha comentada dentro do arquivo principal}
+95             longComment = lineGetter.find(\textcolor{stringliteral}{"/*"});
+96             shortComment = lineGetter.find(\textcolor{stringliteral}{"//"});
+97             \textcolor{comment}{//exposição dos 4 casos possíveis de se encontrar ou não um comentário}
+98 
+99             \textcolor{comment}{// 1º caso existe /* e //}
+100             \textcolor{keywordflow}{if} (longComment != -1 && shortComment != -1)
+101             \{
+102                 \textcolor{comment}{// Se // vem antes de /*}
+103                 \textcolor{keywordflow}{if} (shortComment < longComment)
+104                 \{
+105                     line++;
+106                     substringPointer = lineGetter.find(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"});
+107                     \textcolor{keywordflow}{if} (substringPointer != -1)
+108                     \{
+109                         \textcolor{keywordflow}{while} (substringPointer != -1)
+110                         \{
+111                             line++;
+112                             getline(*inFile, lineGetter);
+113                             substringPointer = lineGetter.find(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"});
+114                         \}
+115                     \}
+116                 \}
+117                 \textcolor{comment}{// Se /* vem antes de //}
+118                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (shortComment > longComment)
+119                 \{
+120                     line++;
+121                     substringPointer = lineGetter.find(\textcolor{stringliteral}{"*/"});
+122                     \textcolor{keywordflow}{if} (substringPointer == -1)
+123                     \{
+124                         \textcolor{keywordflow}{while} (substringPointer == -1)
+125                         \{
+126                             line++;
+127                             getline(*inFile, lineGetter);
+128                             substringPointer = lineGetter.find(\textcolor{stringliteral}{"*/"});
+129                         \}
+130                     \}
+131                 \}
+132             \}
+133             \textcolor{comment}{// 2º caso existe /* mas não //}
+134             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (longComment != -1 && shortComment == -1)
+135             \{
+136                 line++;
+137                 substringPointer = lineGetter.find(\textcolor{stringliteral}{"*/"});
+138                 \textcolor{keywordflow}{if} (substringPointer == -1)
+139                 \{
+140                     \textcolor{keywordflow}{while} (substringPointer == -1)
+141                     \{
+142                         line++;
+143                         getline(*inFile, lineGetter);
+144                         substringPointer = lineGetter.find(\textcolor{stringliteral}{"*/"});
+145                     \}
+146                 \}
+147             \}
+148             \textcolor{comment}{// 3º caso existe // mas não /*}
+149             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (longComment == -1 && shortComment != -1)
+150             \{
+151                 
+152                     line++;
+153                     \textcolor{comment}{// Procura por barra invertidas para encontrar comentários em linhas novas se ja ouve
+       //}
+154                     substringPointer = lineGetter.find(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"});
+155                     \textcolor{keywordflow}{if} (substringPointer != -1)
+156                     \{
+157                         \textcolor{keywordflow}{while} (substringPointer != -1)
+158                         \{
+159                             line++;
+160                             getline(*inFile, lineGetter);
+161                             substringPointer = lineGetter.find(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"});
+162                         \}
+163                     \}
+164                 
+165                 
+166             \}
+167             \textcolor{comment}{// 4º caso se existe linhas vazias}
+168             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (lineGetterAux.size() == 0)
+169             \{
+170                 line++;
+171             \}
+172         \}
+173         \textcolor{comment}{// Retorno de controle se o arquivo foi lido}
+174         \textcolor{keywordflow}{return} 0;
+175     \}
+176     \textcolor{keywordflow}{else}
+177     \{
+178         \textcolor{comment}{// Retorno de controle se o arquivo não foi lido}
+179         \textcolor{keywordflow}{return} -1;
+180     \}
+181 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{reader_8cpp_af755d33e8dda19017549ff7e9ff9e234}\label{reader_8cpp_af755d33e8dda19017549ff7e9ff9e234}} 
+\index{reader.\+cpp@{reader.\+cpp}!count\+\_\+doc\+\_\+lines@{count\+\_\+doc\+\_\+lines}}
+\index{count\+\_\+doc\+\_\+lines@{count\+\_\+doc\+\_\+lines}!reader.\+cpp@{reader.\+cpp}}
+\subsubsection{\texorpdfstring{count\+\_\+doc\+\_\+lines()}{count\_doc\_lines()}}
+{\footnotesize\ttfamily int count\+\_\+doc\+\_\+lines (\begin{DoxyParamCaption}\item[{fstream $\ast$}]{in\+File,  }\item[{int \&}]{line }\end{DoxyParamCaption})}
+
+
+
+Função que conta todas as linhas do programa. 
+
+Contagem de todas as linhas do documento.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em in\+File} & \\
+\hline
+{\em line} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 
+\end{DoxyReturn}
+Variáveis para analisar o aquivo
+
+Definição na linha 43 do arquivo reader.\+cpp.
+
+
+\begin{DoxyCode}
+44 \{
+49     line = 0;
+50     \textcolor{keywordtype}{string} a;
+51     \textcolor{keywordflow}{if} (inFile->is\_open())
+52     \{
+53         \textcolor{keywordflow}{while} (!inFile->eof())
+54         \{
+55             \textcolor{comment}{// contagem das linhas totais do programa}
+56             getline(*inFile, a);
+57             line++;
+58         \}
+59         \textcolor{comment}{// retorno de controle se o arquivo foi aberto}
+60         \textcolor{keywordflow}{return} 0;
+61     \}
+62 
+63     \textcolor{keywordflow}{else}
+64     \{
+65         \textcolor{comment}{// retorno de controle se o arquivo não foi aberto}
+66         \textcolor{keywordflow}{return} -1;
+67     \}
+68 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{reader_8cpp_aac6f305904e3ab9183d8bafb83b4f293}\label{reader_8cpp_aac6f305904e3ab9183d8bafb83b4f293}} 
+\index{reader.\+cpp@{reader.\+cpp}!readdoc@{readdoc}}
+\index{readdoc@{readdoc}!reader.\+cpp@{reader.\+cpp}}
+\subsubsection{\texorpdfstring{readdoc()}{readdoc()}}
+{\footnotesize\ttfamily int readdoc (\begin{DoxyParamCaption}\item[{fstream $\ast$}]{in\+File,  }\item[{string}]{stringfile }\end{DoxyParamCaption})}
+
+
+
+Função de leitura do arquivo. 
+
+Função de leitura de arquivo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em in\+File} & \\
+\hline
+{\em stringfile} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 
+\end{DoxyReturn}
+
+
+Definição na linha 20 do arquivo reader.\+cpp.
+
+
+\begin{DoxyCode}
+21 \{
+22     \textcolor{comment}{//@brief Abre o arquivo especificado em stringFile}
+23     inFile->fstream::open(stringfile, fstream::in | fstream::out);
+24     \textcolor{keywordflow}{if} (inFile->is\_open())
+25     \{
+26         \textcolor{comment}{// O arquivo foi aberto com sucesso}
+27         \textcolor{keywordflow}{return} 0;
+28     \}
+29 
+30     \textcolor{keywordflow}{else}
+31     \{
+32         \textcolor{comment}{// O arquivo não foi aberto}
+33         \textcolor{keywordflow}{return} -1;
+34     \}
+35 \}
+\end{DoxyCode}
