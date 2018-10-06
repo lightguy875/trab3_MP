@@ -58,84 +58,96 @@ int count_doc_lines(fstream *inFile, int &line)
  */
 int count_coment(fstream *inFile, int &line)
 {
+    /**
+     * @brief variáveis necessárias para analisar os comentários do arquivo
+     * 
+     */
 	line = 0;
-	int b, c, l;
-	string a;
-    string aux;
+	int longComment, shortComment, substringPointer;
+	string lineGetter;
+    string lineGetterAux;
+
 	if (inFile->is_open())
 	{
 		while (!inFile->eof())
 		{
-			getline(*inFile, a);
-            aux = a;
-            boost::erase_all(aux," ");
-            b = a.find("/*");
-			c = a.find("//");
+            getline(*inFile, lineGetter);
+            lineGetterAux = lineGetter;
+            boost::erase_all(lineGetterAux, " "); /// @brief Remove espaços em branco do programa
+            ///@brief procura se existe uma linha comentada dentro do arquivo principal
+            longComment = lineGetter.find("/*");
+            shortComment = lineGetter.find("//");
+            /// exposição dos 4 casos possíveis de se encontrar ou não um comentário
 
-			if (b != -1 && c != -1)
-			{
-				if (c < b)
-				{
+            /// 1º caso existe /* e //
+            if (longComment != -1 && shortComment != -1)
+            {
+                /// Se // vem antes de /*
+                if (shortComment < longComment)
+                {
 					line++;
-					l = a.find("\\");
-					if (l != -1)
-					{
-						while (l != -1 )
-						{
+                    substringPointer = lineGetter.find("\\");
+                    if (substringPointer != -1)
+                    {
+                        while (substringPointer != -1)
+                        {
 							line++;
-							getline(*inFile, a);
-							l = a.find("\\");
-						}
+                            getline(*inFile, lineGetter);
+                            substringPointer = lineGetter.find("\\");
+                        }
 					}
 				}
-				else if (c > b)
-				{
+                /// Se /* vem antes de //
+                else if (shortComment > longComment)
+                {
 					line++;
-					l = a.find("*/");
-					if (l == -1)
-					{
-						while (l == -1)
-						{
+                    substringPointer = lineGetter.find("*/");
+                    if (substringPointer == -1)
+                    {
+                        while (substringPointer == -1)
+                        {
 							line++;
-							getline(*inFile, a);
-                            l = a.find("*/");
-						}
+                            getline(*inFile, lineGetter);
+                            substringPointer = lineGetter.find("*/");
+                        }
 					}
 				}
 			}
-			else if (b != -1 && c == -1)
-			{
+            /// 2º caso existe /* mas não //
+            else if (longComment != -1 && shortComment == -1)
+            {
 				line++;
-				l = a.find("*/");
-				if (l == -1)
-				{
-					while (l == -1)
-					{
+                substringPointer = lineGetter.find("*/");
+                if (substringPointer == -1)
+                {
+                    while (substringPointer == -1)
+                    {
 						line++;
-						getline(*inFile, a);
-                        l = a.find("*/");
-					}
+                        getline(*inFile, lineGetter);
+                        substringPointer = lineGetter.find("*/");
+                    }
 				}
 			}
-
-			else if (b == -1 && c != -1)
-			{
+            /// 3º caso existe // mas não /*
+            else if (longComment == -1 && shortComment != -1)
+            {
 				
 					line++;
-					l = a.find("\\");
-					if (l != -1)
-					{
-						while (l != -1 )
-						{
+                    // Procura por barra invertidas para encontrar comentários em linhas novas
+                    substringPointer = lineGetter.find("\\");
+                    if (substringPointer != -1)
+                    {
+                        while (substringPointer != -1)
+                        {
 							line++;
-							getline(*inFile, a);
-							l = a.find("\\");
-						}
+                            getline(*inFile, lineGetter);
+                            substringPointer = lineGetter.find("\\");
+                        }
 					}
 				
 				
 			}
-            else if (aux.size() == 0)
+            else if (lineGetterAux.size() == 0)
             {
                 line++;
             }

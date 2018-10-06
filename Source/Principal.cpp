@@ -5,31 +5,35 @@
 
 int main(int argc, char const *argv[])
 {
-    int inutialized_lines = 0;
+    int inutializedLines = 0;
 
-    int all_doc_files = 0;
+    int alldocLines = 0;
 
-    int utilized_lines = 0;
+    int utilizedLines = 0;
 
     fstream inFile;
 
-    string a = "Sample/program.cpp";
+    string readFile = "Sample/program.cpp";
 
-    string b;
+    readdoc(&inFile, readFile);
 
-    readdoc(&inFile, a);
-
-    count_doc_lines(&inFile, all_doc_files);
+    count_doc_lines(&inFile, alldocLines);
 
     inFile.clear();
 
     inFile.seekg(0, ios::beg);
 
-    count_coment(&inFile,inutialized_lines);
+    count_coment(&inFile, inutializedLines);
 
-    utilized_lines = all_doc_files - inutialized_lines;
+    utilizedLines = alldocLines - inutializedLines;
+
+    cout << "A quantidade de linhas totais do programa são:" << alldocLines << endl;
+
+    cout << "A quantidade de linhas de código efetivo são:" << utilizedLines << endl;
+
+    cout << "A quantidade de linhas comentadas ou em branco são:" << inutializedLines << endl;
+
     
-    cout << "A quantidade de linhas de código efetivo são:" << utilized_lines << endl; 
     
     return 0;
 }
