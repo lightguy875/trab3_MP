@@ -2,8 +2,8 @@
 using namespace std;
          
 /*
- Programa de teste para o programa principal
- tem por objetivo testar o código que é o programa principal
+ Test program for principal program
+ it will test the main program called Principal.cpp
 */
 int main(int argc, char const *argv[])
 {

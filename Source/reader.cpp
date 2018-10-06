@@ -10,16 +10,18 @@
  */
 int readdoc(fstream *inFile, string stringfile)
 {
-
-	inFile->fstream::open(stringfile, fstream::in | fstream::out);
+    ///@brief Abre o arquivo especificado em stringFile
+    inFile->fstream::open(stringfile, fstream::in | fstream::out);
 	if (inFile->is_open())
 	{
-		return 0;
+        ///< O arquivo foi aberto com sucesso
+        return 0;
 	}
 
 	else
 	{
-		return -1;
+        ///< O arquivo não foi aberto
+        return -1;
 	}
 }
 /**
@@ -31,22 +33,28 @@ int readdoc(fstream *inFile, string stringfile)
  */
 int count_doc_lines(fstream *inFile, int &line)
 {
+    /**
+     * @brief Variáveis para analisar o aquivo
+     * 
+     */
 	line = 0;
 	string a;
 	if (inFile->is_open())
 	{
 		while (!inFile->eof())
 		{
-			getline(*inFile, a);
+            ///< contagem das linhas totais do programa
+            getline(*inFile, a);
 			line++;
 		}
-
-		return 0;
+        ///< retorno de controle se o arquivo foi aberto
+        return 0;
 	}
 
 	else
 	{
-		return -1;
+        ///< retorno de controle se o arquivo não foi aberto
+        return -1;
 	}
 }
 /**
@@ -73,16 +81,16 @@ int count_coment(fstream *inFile, int &line)
 		{
             getline(*inFile, lineGetter);
             lineGetterAux = lineGetter;
-            boost::erase_all(lineGetterAux, " "); /// @brief Remove espaços em branco do programa
-            ///@brief procura se existe uma linha comentada dentro do arquivo principal
+            boost::erase_all(lineGetterAux, " "); ///< Remove espaços em branco do programa
+            ///< procura se existe uma linha comentada dentro do arquivo principal
             longComment = lineGetter.find("/*");
             shortComment = lineGetter.find("//");
-            /// exposição dos 4 casos possíveis de se encontrar ou não um comentário
+            ///<exposição dos 4 casos possíveis de se encontrar ou não um comentário
 
-            /// 1º caso existe /* e //
+            ///< 1º caso existe /* e //
             if (longComment != -1 && shortComment != -1)
             {
-                /// Se // vem antes de /*
+                ///< Se // vem antes de /*
                 if (shortComment < longComment)
                 {
 					line++;
@@ -97,7 +105,7 @@ int count_coment(fstream *inFile, int &line)
                         }
 					}
 				}
-                /// Se /* vem antes de //
+                ///< Se /* vem antes de //
                 else if (shortComment > longComment)
                 {
 					line++;
@@ -113,7 +121,7 @@ int count_coment(fstream *inFile, int &line)
 					}
 				}
 			}
-            /// 2º caso existe /* mas não //
+            ///< 2º caso existe /* mas não //
             else if (longComment != -1 && shortComment == -1)
             {
 				line++;
@@ -128,12 +136,12 @@ int count_coment(fstream *inFile, int &line)
                     }
 				}
 			}
-            /// 3º caso existe // mas não /*
+            ///< 3º caso existe // mas não /*
             else if (longComment == -1 && shortComment != -1)
             {
 				
 					line++;
-                    // Procura por barra invertidas para encontrar comentários em linhas novas
+                    ///< Procura por barra invertidas para encontrar comentários em linhas novas se ja ouve //
                     substringPointer = lineGetter.find("\\");
                     if (substringPointer != -1)
                     {
@@ -147,16 +155,18 @@ int count_coment(fstream *inFile, int &line)
 				
 				
 			}
+            ///< 4º caso se existe linhas vazias
             else if (lineGetterAux.size() == 0)
             {
                 line++;
             }
         }
-        
+        ///< Retorno de controle se o arquivo foi lido
         return 0;
 	}
     else
     {
-                return -1;
+        ///< Retorno de controle se o arquivo não foi lido
+        return -1;
     }
 }
