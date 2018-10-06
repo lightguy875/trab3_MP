@@ -10,11 +10,13 @@ using namespace std;
 */
 int main(int argc, char const *argv[])
 {
-
-    //*print function 
+    //*printing function
+    //*print function
+    /*// testing */ 
     cout << "Hello, World!"; 
     // next line comentary \
-    it will treat the next line as a commented line
+    it will treat the next line as a commented line \
+    yeah
     return 0;
 
 }

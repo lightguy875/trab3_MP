@@ -49,7 +49,7 @@ int count_doc_lines(fstream *inFile, int &line)
 	}
 }
 /**
- * @brief Função que conta todos os comentários do programa
+ * @brief Função que conta todos os comentários do programa juntamente com quebra de linha
  * 
  * @param inFile 
  * @param line 

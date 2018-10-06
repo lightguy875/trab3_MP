@@ -2,7 +2,7 @@ ID$@IR =../include
 IDIR = ../include
 CC= g++ 
 CFLAGS=-I$(IDIR) -ftest-coverage -fprofile-arcs -lgtest -lgtest_main -fpermissive
-
+PROGRAM_GCOV = reader
 ODIR=../obj
 TEST_ODIR=../Test/obj
 LDIR =../Source
@@ -35,7 +35,7 @@ $(TEST_EXE) : $(TESTS) reader.cpp
 program: $(PROGRAM) test gcov project
 
 test: $(TEST_EXE)
-	mv $(LDIR)/*.gcno $(ODIR)
+	cp $(LDIR)/*.gcno $(ODIR)
 
 run: 
 	./$(PROGRAM) 
@@ -45,13 +45,13 @@ run_test:
 .PHONY: clean
 
 gcov:
-	gcov $(TEST_DIR)/$(PROGRAM).gcda
+	gcov $(PROGRAM_GCOV).gcda
 
 clean:
 	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ $(PROGRAM) $(TEST_EXE)
 
 clean_coverage:
-	rm -f $(ODIR)/*.gcno $(ODIR)/*.gcda
+	rm -f *.gcno *.gcda *.gcov
 
 clean_all:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ && rm -f $(ODIR)/*.gcno $(ODIR)/*.gcda $(PROGRAM) $(TEST_EXE)
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ && rm -f *.gcno *.gcda *.gcov $(PROGRAM) $(TEST_EXE)
