@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
 #include <fstream>
-#include<string>
+#include <boost/algorithm/string.hpp>
+
 using namespace std;
 int readdoc(fstream *,string);
 int count_coment(fstream *inFile, int &line);

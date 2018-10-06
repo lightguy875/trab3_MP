@@ -1,5 +1,6 @@
 
 #include "../include/reader.hpp"
+
 /**
  * @brief Função de leitura do arquivo
  * 
@@ -60,12 +61,15 @@ int count_coment(fstream *inFile, int &line)
 	line = 0;
 	int b, c, l;
 	string a;
+    string aux;
 	if (inFile->is_open())
 	{
 		while (!inFile->eof())
 		{
 			getline(*inFile, a);
-			b = a.find("/*");
+            aux = a;
+            boost::erase_all(aux," ");
+            b = a.find("/*");
 			c = a.find("//");
 
 			if (b != -1 && c != -1)
@@ -131,7 +135,7 @@ int count_coment(fstream *inFile, int &line)
 				
 				
 			}
-            else if (a.size() == 0)
+            else if (aux.size() == 0)
             {
                 line++;
             }
