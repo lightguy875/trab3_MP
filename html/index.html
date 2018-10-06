@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Contador_de_linhas: Página Principal</title>
+<title>Contador_de_linhas: Contador de linhas de código c/c++ com framework de teste gtest</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,10 +62,26 @@ $(function() {
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Contador_de_linhas Documentação</div>  </div>
+<div class="title">Contador de linhas de código c/c++ com framework de teste gtest </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><h1>Observação</h1>
+<p>O arquivo Principal apenas roda o programa.cpp que está na pasta Sample que serve como teste para a aplicação principal</p>
+<h2>Como compilar o software e o arquivo de teste</h2>
+<p>Para compilar o software e necessário estar na pasta Source e usar o seguinte comando:</p>
+<div class="fragment"><div class="line">$ make</div></div><!-- fragment --><p>Para compilar o arquivo de teste do software é necessário rodar o seguinte comando:</p>
+<div class="fragment"><div class="line">$make test</div></div><!-- fragment --><h2>Como rodar o programa principal</h2>
+<div class="fragment"><div class="line">$make run</div></div><!-- fragment --><h2>Como rodar os testes e analisar a cobertura</h2>
+<p>Ainda na pasta de Source e necessário executar o seguinte código:</p>
+<div class="fragment"><div class="line">$ make run_test</div></div><!-- fragment --><p> Para ver a cobertura de testes</p>
+<div class="fragment"><div class="line">$ make gcov</div></div><!-- fragment --><h2>Como limpar o programa depois da execução</h2>
+<p>Para limpar a compilação é necessário rodar o seguinte comando:</p>
+<div class="fragment"><div class="line">$ make clean</div></div><!-- fragment --><p>Para limpar o arquivo de cobertura de testes: </p><div class="fragment"><div class="line">$ make clean_coverage</div></div><!-- fragment --><p> Para limpar todos os arquivos compilados juntamente com os de cobertura </p><div class="fragment"><div class="line">$ make clean_all</div></div><!-- fragment --><h1>Arquivos de documentação</h1>
+<h2>Site html</h2>
+<p>Para acessar o site contendo as informações do programa basta acessar o arquivo index.html a abri-lo com um navegador da pasta html contida dentro de cada pasta:</p>
+<div class="fragment"><div class="line">$ html/index.html</div></div><!-- fragment --><h2>Arquivo pdf</h2>
+<p>Para acessar o arquivo pdf basta entrar na pasta latex e abrir o arquivo refman contendo toda a documentação em arquivo latex:</p>
+<div class="fragment"><div class="line">$ latex/refman.pdf</div></div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Gerado por &#160;<a href="http://www.doxygen.org/index.html">

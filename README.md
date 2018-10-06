@@ -17,7 +17,7 @@ Para compilar o arquivo de teste do software é necessário rodar o seguinte com
 $make test
 ```
 
-##Como rodar o programa principal
+## Como rodar o programa principal
 
 ```
 $make run

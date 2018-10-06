@@ -17,9 +17,9 @@
  * @param stringfile 
  * @return int 
  */
-int readdoc(fstream *inFile, string stringfile)
+int readdoc(fstream * inFile, string stringfile)
 {
-    //@brief Abre o arquivo especificado em stringFile
+    // Abre o arquivo especificado em stringFile
     inFile->fstream::open(stringfile, fstream::in | fstream::out);
 	if (inFile->is_open())
 	{
@@ -40,7 +40,7 @@ int readdoc(fstream *inFile, string stringfile)
  * @param line 
  * @return int 
  */
-int count_doc_lines(fstream *inFile, int &line)
+int count_doc_lines(fstream *inFile, int& line)
 {
     /**
      * @brief Variáveis para analisar o aquivo
@@ -73,7 +73,7 @@ int count_doc_lines(fstream *inFile, int &line)
  * @param line 
  * @return int 
  */
-int count_coment(fstream *inFile, int &line)
+int count_coment(fstream *inFile, int& line)
 {
     /**
      * @brief variáveis necessárias para analisar os comentários do arquivo

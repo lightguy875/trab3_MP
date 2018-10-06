@@ -1,0 +1,87 @@
+\section*{Observação}
+
+O arquivo Principal apenas roda o programa.\+cpp que está na pasta Sample que serve como teste para a aplicação principal
+
+\subsection*{Como compilar o software e o arquivo de teste}
+
+Para compilar o software e necessário estar na pasta Source e usar o seguinte comando\+:
+
+
+\begin{DoxyCode}
+$ make
+\end{DoxyCode}
+
+
+Para compilar o arquivo de teste do software é necessário rodar o seguinte comando\+:
+
+
+\begin{DoxyCode}
+$make test
+\end{DoxyCode}
+
+
+\subsection*{Como rodar o programa principal}
+
+
+\begin{DoxyCode}
+$make run
+\end{DoxyCode}
+
+
+\subsection*{Como rodar os testes e analisar a cobertura}
+
+Ainda na pasta de Source e necessário executar o seguinte código\+:
+
+
+\begin{DoxyCode}
+$ make run\_test
+\end{DoxyCode}
+ Para ver a cobertura de testes
+
+
+\begin{DoxyCode}
+$ make gcov
+\end{DoxyCode}
+
+
+\subsection*{Como limpar o programa depois da execução}
+
+Para limpar a compilação é necessário rodar o seguinte comando\+:
+
+
+\begin{DoxyCode}
+$ make clean
+\end{DoxyCode}
+
+
+Para limpar o arquivo de cobertura de testes\+: 
+\begin{DoxyCode}
+$ make clean\_coverage
+\end{DoxyCode}
+ Para limpar todos os arquivos compilados juntamente com os de cobertura 
+\begin{DoxyCode}
+$ make clean\_all
+\end{DoxyCode}
+
+
+\section*{Arquivos de documentação}
+
+\subsection*{Site html}
+
+Para acessar o site contendo as informações do programa basta acessar o arquivo index.\+html a abri-\/lo com um navegador da pasta html contida dentro de cada pasta\+:
+
+
+\begin{DoxyCode}
+$ html/index.html
+\end{DoxyCode}
+
+
+\subsection*{Arquivo pdf}
+
+Para acessar o arquivo pdf basta entrar na pasta latex e abrir o arquivo refman contendo toda a documentação em arquivo latex\+:
+
+
+\begin{DoxyCode}
+$ latex/refman.pdf
+\end{DoxyCode}
+ 

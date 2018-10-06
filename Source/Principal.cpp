@@ -1,7 +1,7 @@
 /**
  * @file Principal.cpp
  * @author Luís Eduardo (lightguy875@github.com)
- * @brief 
+ * @brief Arquivo principal do código
  * @version 0.1
  * @date 2018-10-06
  * 

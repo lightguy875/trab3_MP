@@ -1,5 +1,5 @@
 \babel@toc {brazil}{}
-\contentsline {chapter}{\numberline {1}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ME}{1}{chapter.1}
+\contentsline {chapter}{\numberline {1}Contador de linhas de c\IeC {\'o}digo c/c++ com framework de teste gtest}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}\IeC {\'I}ndice dos Arquivos}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Lista de Arquivos}{3}{section.2.1}
 \contentsline {chapter}{\numberline {3}Arquivos}{5}{chapter.3}
@@ -21,4 +21,4 @@
 \contentsline {subsubsection}{\numberline {3.3.2.3}readdoc()}{14}{subsubsection.3.3.2.3}
 \contentsline {section}{\numberline {3.4}Refer\IeC {\^e}ncia do Arquivo Test/\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Test\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}reader.cpp}{15}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Descri\IeC {\c c}\IeC {\~a}o detalhada}{15}{subsection.3.4.1}
-\contentsline {chapter}{Sum\IeC {\'a}rio}{17}{section*.6}
+\contentsline {chapter}{Sum\IeC {\'a}rio}{17}{section*.14}
