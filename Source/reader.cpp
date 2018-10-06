@@ -1,6 +1,12 @@
 
 #include "../include/reader.hpp"
-
+/**
+ * @brief Função de leitura do arquivo
+ * 
+ * @param inFile 
+ * @param stringfile 
+ * @return int 
+ */
 int readdoc(fstream *inFile, string stringfile)
 {
 
@@ -15,6 +21,13 @@ int readdoc(fstream *inFile, string stringfile)
 		return -1;
 	}
 }
+/**
+ * @brief Função que conta todas as linhas do programa
+ * 
+ * @param inFile 
+ * @param line 
+ * @return int 
+ */
 int count_doc_lines(fstream *inFile, int &line)
 {
 	line = 0;
@@ -35,6 +48,13 @@ int count_doc_lines(fstream *inFile, int &line)
 		return -1;
 	}
 }
+/**
+ * @brief Função que conta todos os comentários do programa
+ * 
+ * @param inFile 
+ * @param line 
+ * @return int 
+ */
 int count_coment(fstream *inFile, int &line)
 {
 	line = 0;
@@ -109,18 +129,18 @@ int count_coment(fstream *inFile, int &line)
 						}
 					}
 				
-				else if (a == "\n")
-				{
-					line++;
-				}
+				
 			}
-		}
+            else if (a.size() == 0)
+            {
+                line++;
+            }
+        }
         
         return 0;
 	}
     else
     {
-        cout << "No file openned" << endl;
-        return -1;
+                return -1;
     }
 }

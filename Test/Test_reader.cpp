@@ -29,7 +29,6 @@ TEST(GET_ALL_DOC_LINES,all_lines_count)
     EXPECT_EQ(-1,count_coment(&inFile, line));
     readdoc(&inFile,a);
     EXPECT_NE(-1,count_coment(&inFile,line));
-    cout << line << endl;
 
 }
  

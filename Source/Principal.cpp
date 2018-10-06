@@ -1,14 +1,21 @@
 
 #include "../include/reader.hpp"
+#include <iostream>
 
 
 int main(int argc, char const *argv[])
 {
     fstream inFile;
     //inFile.open("Sample/program.cpp",fstream::in | fstream::out);
-    string a = "Sample/program.cpp /* */";
-   /*  readdoc(&inFile, a);
-    if(inFile.is_open())
+    string a = "Sample/program.cpp";
+    string b;
+    readdoc(&inFile, a);
+    getline(inFile, b);
+    getline(inFile, b);
+    getline(inFile, b);
+    printf("%c, %i",b,b);
+
+    /*  if(inFile.is_open())
     {
         cout << "It is working";
         
@@ -17,7 +24,7 @@ int main(int argc, char const *argv[])
     else
     {
         cout << "Is not working";
-    }
-     */
+    } */
+     
     return 0;
 }
